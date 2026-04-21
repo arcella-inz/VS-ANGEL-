@@ -3,61 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Become An Angel</title>
+<title>Become a VS Angel</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body{margin:0;font-family:Georgia,serif;background:repeating-linear-gradient(90deg,#f7c6d8 0,#f7c6d8 40px,#f3b7cd 40px,#f3b7cd 80px);color:#3a2230}
-.hero{max-width:1100px;margin:auto;padding:30px;text-align:center}
-h1{font-size:72px;font-style:italic;margin:10px 0;color:#111}
-.sub{font-size:42px;letter-spacing:4px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:30px 0}
-.card{background:rgba(255,255,255,.45);border-radius:20px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-img{width:100%;border-radius:16px;display:block}
-.banner{background:#c97aa0;color:white;padding:40px 20px;border-radius:24px;margin:30px 0}
-.banner h2{font-size:48px;margin:0 0 10px;font-style:italic}
-.banner p{max-width:760px;margin:10px auto;line-height:1.7}
-.columns{display:grid;grid-template-columns:2fr 1fr;gap:20px;text-align:left}
-ul{list-style:none;padding:0;margin:0}
-li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.2)}
-.cta{margin:40px 0}
-button{font-size:36px;padding:18px 40px;border:none;border-radius:20px;background:#ffe8ef;color:#5a2440;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-button:hover{transform:translateY(-2px)}
-@media(max-width:800px){h1{font-size:52px}.sub{font-size:28px}.columns{grid-template-columns:1fr}}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: repeating-linear-gradient(
+        90deg,
+        #f8c6d8,
+        #f8c6d8 20px,
+        #f3b3c8 20px,
+        #f3b3c8 40px
+    );
+    color: #3a1f2b;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 70px;
+    margin: 0;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 22px;
+    color: #a02c5a;
+    margin-top: 20px;
+}
+
+/* IMAGE GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 30px;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: saturate(1.1);
+}
+
+/* TEXT SECTION */
+.content {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    line-height: 1.7;
+    margin: 12px 0;
+}
+
+/* APPLY BUTTON */
+.cta {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta button {
+    background: #ffd6e0;
+    border: 2px solid #e79ab3;
+    padding: 18px 50px;
+    font-size: 26px;
+    font-family: 'Playfair Display', serif;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    background: #e79ab3;
+    color: white;
+}
+
+/* FOOTER IMAGE */
+.footer-img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* SIDE CATEGORY */
+.categories {
+    position: fixed;
+    right: 20px;
+    top: 30%;
+    text-align: right;
+    font-family: 'Playfair Display', serif;
+}
+
+.categories h4 {
+    margin-bottom: 10px;
+}
+
+.categories p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+    .hero h1 { font-size: 50px; }
+    .hero h2 { font-size: 40px; }
+    .categories { display: none; }
+}
 </style>
 </head>
+
 <body>
+
+<!-- SIDE MENU -->
+<div class="categories">
+    <h4>CATEGORIES</h4>
+    <p>Beauty</p>
+    <p>Brand Values</p>
+    <p>Events</p>
+    <p>Fashion Show</p>
+    <p>Profiles</p>
+    <p>Style</p>
+</div>
+
+<!-- HERO -->
 <section class="hero">
-<h1>Become</h1>
-<div class="sub">A VS Angel</div>
-<div class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="fashion"></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop" alt="model"></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop" alt="runway"></div>
-</div>
-<div class="banner">
-<h2>Are There Angels Among Us?</h2>
-<div class="columns">
-<div>
-<p>Calling all Angels. The world will look again this fall.</p>
-<p>Style. Beauty. Strength. A stage where being there is everything, and only a few are chosen.</p>
-<p>We are looking for the next group of Angels—full of confidence, charm, and energy that can't be denied.</p>
-<p>You can now apply. Last day to apply: May 28, 2026.</p>
-</div>
-<div>
-<ul>
-<li>Beauty</li>
-<li>Brand Values</li>
-<li>Events</li>
-<li>Fashion Show</li>
-<li>Profiles</li>
-<li>Style</li>
-<li>Travel</li>
-<li>Voices</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="cta"><button>APPLY NOW!</button></div>
+    <h1>Become</h1>
+    <h2>A VS Angel</h2>
+    <p>Are There Angels Among Us?</p>
 </section>
+
+<!-- IMAGE GRID (replace src with your images) -->
+<section class="grid">
+    <img src="https://via.placeholder.com/400x500">
+    <img src="https://via.placeholder.com/400x500">
+    <img src="https://via.placeholder.com/400x500">
+    <img src="https://via.placeholder.com/400x500">
+</section>
+
+<!-- CONTENT -->
+<section class="content">
+    <h3>Calling All Angels</h3>
+
+    <p>The world will look again this fall.</p>
+    <p><strong>Style. Beauty. Strength.</strong></p>
+
+    <p>
+    A stage where being there is everything,
+    and only a few are chosen.
+    </p>
+
+    <p>
+    We are looking for the next group of Angels —
+    people full of confidence, charm, and undeniable energy.
+    </p>
+
+    <p>
+    This is more than just a runway.
+    It’s a moment for the whole world.
+    </p>
+
+    <p>
+    Apply now. Deadline: May 28, 2026.
+    </p>
+
+    <p><em>Do you have what it takes?</em></p>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+    <button>APPLY NOW</button>
+</div>
+
+<!-- FOOTER IMAGE -->
+<img class="footer-img" src="https://via.placeholder.com/1200x500">
+
 </body>
 </html>
-
