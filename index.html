@@ -3,78 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Become An Angel</title>
+<title>VS Angels</title>
 <style>
 body{margin:0;font-family:Georgia,serif;background:repeating-linear-gradient(90deg,#f7c6d8 0,#f7c6d8 40px,#f3b7cd 40px,#f3b7cd 80px);color:#3a2230}
-.hero{max-width:1200px;margin:auto;padding:30px;text-align:center}
-h1{font-size:72px;font-style:italic;margin:10px 0;color:#111}
-.sub{font-size:42px;letter-spacing:4px}
+nav{display:flex;justify-content:center;gap:30px;padding:20px;background:#c97aa0}
+nav a{color:white;text-decoration:none;font-size:20px}
+section{display:none;max-width:1200px;margin:auto;padding:30px;text-align:center}
+section.active{display:block}
+h1{font-size:60px;font-style:italic}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin:30px 0}
-.card{background:rgba(255,255,255,.45);border-radius:20px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-img{width:100%;border-radius:16px;display:block}
-.banner{background:#c97aa0;color:white;padding:40px 20px;border-radius:24px;margin:30px 0}
-.banner h2{font-size:48px;margin:0 0 10px;font-style:italic}
-.banner p{max-width:760px;margin:10px auto;line-height:1.7}
-.columns{display:grid;grid-template-columns:2fr 1fr;gap:20px;text-align:left}
-ul{list-style:none;padding:0;margin:0}
-li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.2)}
-.cta{margin:40px 0}
-button{font-size:36px;padding:18px 40px;border:none;border-radius:20px;background:#ffe8ef;color:#5a2440;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-button:hover{transform:translateY(-2px)}
-.section-title{font-size:36px;margin-top:40px}
-@media(max-width:800px){h1{font-size:52px}.sub{font-size:28px}.columns{grid-template-columns:1fr}}
+.card{background:rgba(255,255,255,.45);border-radius:20px;padding:10px}
+img{width:100%;border-radius:16px}
+button{font-size:30px;padding:15px 30px;border:none;border-radius:20px;background:#ffe8ef;cursor:pointer}
 </style>
 </head>
 <body>
-<section class="hero">
-<h1>Become</h1>
-<div class="sub">A VS Angel</div>
 
-<!-- FIRST IMAGE SET -->
-<div class="grid">
-<div class="card"><img src="/mnt/data/B(3).jpg" alt="group"></div>
-<div class="card"><img src="/mnt/data/B (1).png" alt="collage"></div>
-<div class="card"><img src="/mnt/data/B(2).jpg" alt="runway"></div>
-</div>
+<nav>
+<a href="#" onclick="showPage('home')">Home</a>
+<a href="#" onclick="showPage('gallery')">Gallery</a>
+<a href="#" onclick="showPage('apply')">Apply</a>
+<a href="#" onclick="showPage('about')">About</a>
+</nav>
 
-<!-- SECOND IMAGE SET -->
-<div class="grid">
-<div class="card"><img src="/mnt/data/vs.jpg" alt="vs1"></div>
-<div class="card"><img src="/mnt/data/vs (2).jpg" alt="vs2"></div>
-<div class="card"><img src="/mnt/data/vs(3).jpg" alt="vs3"></div>
-</div>
-
-<!-- THIRD IMAGE SET -->
-<div class="grid">
-<div class="card"><img src="/mnt/data/vs(4).jpg" alt="vs4"></div>
-<div class="card"><img src="/mnt/data/vs fashion show.jpg" alt="runway show"></div>
-</div>
-
-<div class="banner">
-<h2>Are There Angels Among Us?</h2>
-<div class="columns">
-<div>
-<p>Calling all Angels. The world will look again this fall.</p>
-<p>Style. Beauty. Strength. A stage where being there is everything, and only a few are chosen.</p>
-<p>We are looking for the next group of Angels—full of confidence, charm, and energy that can't be denied.</p>
-<p>You can now apply. Last day to apply: May 28, 2026.</p>
-</div>
-<div>
-<ul>
-<li>Beauty</li>
-<li>Brand Values</li>
-<li>Events</li>
-<li>Fashion Show</li>
-<li>Profiles</li>
-<li>Style</li>
-<li>Travel</li>
-<li>Voices</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="cta"><button>APPLY NOW!</button></div>
+<!-- HOME -->
+<section id="home" class="active">
+<h1>Become A VS Angel</h1>
+<p>Confidence. Beauty. Power.</p>
+<button onclick="showPage('apply')">APPLY NOW</button>
 </section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h1>Gallery</h1>
+<div class="grid">
+<img src="/mnt/data/B(3).jpg">
+<img src="/mnt/data/vs.jpg">
+<img src="/mnt/data/vs(4).jpg">
+<img src="/mnt/data/vs fashion show.jpg">
+</div>
+</section>
+
+<!-- APPLY -->
+<section id="apply">
+<h1>Apply Now</h1>
+<p>Fill in your details</p>
+<input placeholder="Name"><br><br>
+<input placeholder="Age"><br><br>
+<input placeholder="Email"><br><br>
+<button>Submit</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h1>About</h1>
+<p>This is a fashion casting experience inspired by runway icons.</p>
+</section>
+
+<script>
+function showPage(page){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(page).classList.add('active');
+}
+</script>
+
 </body>
 </html>
