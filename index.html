@@ -11,9 +11,7 @@ h1{font-size:72px;font-style:italic;margin:10px 0}
 .sub{font-size:40px;letter-spacing:4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin:30px 0}
 .card{position:relative;border-radius:20px;overflow:hidden}
-.card img{width:100%;height:100%;object-fit:cover;transition:.4s;display:block}
-.card:empty{background:#f3b7cd;min-height:200px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-style:italic}
-.card:empty::after{content:"Add Image Here";opacity:0.8;letter-spacing:1px}
+.card img{width:100%;height:100%;object-fit:cover;transition:.4s}
 .card:hover img{transform:scale(1.08)}
 .overlay{position:absolute;bottom:0;width:100%;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:white;padding:10px}
 .section{margin-top:50px}
@@ -27,46 +25,47 @@ button{font-size:32px;padding:18px 40px;border:none;border-radius:20px;backgroun
 <h1>Become</h1>
 <div class="sub">A VS Angel</div>
 
-<img src="images/B (1).png" style="width:60%;border-radius:20px;margin-top:20px">
-
-<!-- IMPORTANT: Put your images in a folder called "images" -->
-
+<!-- MAIN HERO IMAGE -->
 <img src="images/runway.jpg" style="width:100%;border-radius:20px;margin-top:20px">
 
 <div style="margin:40px 0">
 <button onclick="alert('Application submitted!')">APPLY NOW</button>
 </div>
 
+<!-- SECTION 1 -->
 <div class="section">
 <h1>Backstage</h1>
 <div class="grid">
-<div class="card"><img src="images/backstage1.jpg"><div class="overlay">Backstage Energy</div></div>
+<div class="card"><img src="images/B (1).png"><div class="overlay">Backstage Energy</div></div>
 <div class="card"><img src="images/backstage2.jpg"><div class="overlay">Iconic Moments</div></div>
-<div class="card"><img src="images/backstage3.jpg"><div class="overlay">Runway Prep</div></div>
+<div class="card"><img src="images/B (1).png"><div class="overlay">Runway Prep</div></div>
 </div>
 </div>
 
+<!-- SECTION 2 -->
 <div class="section">
 <h1>Runway</h1>
 <div class="grid">
 <div class="card"><img src="images/runway2.jpg"><div class="overlay">Signature Walk</div></div>
-<div class="card"><img src="images/runway.jpg"><div class="overlay">The Stage</div></div>
+<div class="card"><img src="images/B (1).png"><div class="overlay">The Stage</div></div>
 </div>
 </div>
 
+<!-- SECTION 3 -->
 <div class="section">
 <h1>Editorial</h1>
 <div class="grid">
-<div class="card"><img src="images/editorial1.jpg"><div class="overlay">Editorial Shoot</div></div>
+<div class="card"><img src="images/B (1).png"><div class="overlay">Editorial Shoot</div></div>
 <div class="card"><img src="images/editorial2.jpg"><div class="overlay">Creative Direction</div></div>
 </div>
 </div>
 
+<!-- SECTION 4 -->
 <div class="section">
 <h1>Angels</h1>
 <div class="grid">
 <div class="card"><img src="images/angel1.jpg"><div class="overlay">Classic Era</div></div>
-<div class="card"><img src="images/angel2.jpg"><div class="overlay">Modern Icons</div></div>
+<div class="card"><img src="images/B (1).png"><div class="overlay">Modern Icons</div></div>
 <div class="card"><img src="images/angel3.jpg"><div class="overlay">Diversity</div></div>
 </div>
 </div>
