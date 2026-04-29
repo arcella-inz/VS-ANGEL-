@@ -1,83 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
+vs-site/
+│  <!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VS Angels Experience</title>
-<style>
-body{margin:0;font-family:Georgia,serif;background:repeating-linear-gradient(90deg,#f7c6d8 0,#f7c6d8 40px,#f3b7cd 40px,#f3b7cd 80px);color:#3a2230}
-.hero{max-width:1200px;margin:auto;padding:30px;text-align:center}
-h1{font-size:72px;font-style:italic;margin:10px 0}
-.sub{font-size:40px;letter-spacing:4px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin:30px 0}
-.card{position:relative;border-radius:20px;overflow:hidden}
-.card img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.card:hover img{transform:scale(1.08)}
-.overlay{position:absolute;bottom:0;width:100%;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:white;padding:10px}
-.section{margin-top:50px}
-button{font-size:32px;padding:18px 40px;border:none;border-radius:20px;background:#ffe8ef;color:#5a2440;cursor:pointer}
-.banner{background:#c97aa0;color:white;padding:40px;border-radius:24px;margin-top:40px}
-</style>
+<title>VS Angels</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<section class="hero">
-<h1>Become</h1>
-<div class="sub">A VS Angel</div>
-
-<!-- MAIN HERO IMAGE -->
-<img src="images/runway.jpg" style="width:100%;border-radius:20px;margin-top:20px">
-
-<div style="margin:40px 0">
-<button onclick="alert('Application submitted!')">APPLY NOW</button>
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="backstage.html">Backstage</a>
+  <a href="runway.html">Runway</a>
+  <a href="angels.html">Angels</a>
 </div>
 
-<!-- SECTION 1 -->
-<div class="section">
-<h1>Backstage</h1>
-<div class="grid">
-<div class="card"><img src="images/B (1).png"><div class="overlay">Backstage Energy</div></div>
-<div class="card"><img src="images/backstage2.jpg"><div class="overlay">Iconic Moments</div></div>
-<div class="card"><img src="images/B (1).png"><div class="overlay">Runway Prep</div></div>
-</div>
-</div>
+<div class="container">
 
-<!-- SECTION 2 -->
-<div class="section">
-<h1>Runway</h1>
-<div class="grid">
-<div class="card"><img src="images/runway2.jpg"><div class="overlay">Signature Walk</div></div>
-<div class="card"><img src="images/B (1).png"><div class="overlay">The Stage</div></div>
-</div>
-</div>
+<h1>Become A VS Angel</h1>
 
-<!-- SECTION 3 -->
-<div class="section">
-<h1>Editorial</h1>
-<div class="grid">
-<div class="card"><img src="images/B (1).png"><div class="overlay">Editorial Shoot</div></div>
-<div class="card"><img src="images/editorial2.jpg"><div class="overlay">Creative Direction</div></div>
-</div>
-</div>
+<img src="images/runway-main.jpg" style="width:100%;border-radius:20px">
 
-<!-- SECTION 4 -->
-<div class="section">
-<h1>Angels</h1>
-<div class="grid">
-<div class="card"><img src="images/angel1.jpg"><div class="overlay">Classic Era</div></div>
-<div class="card"><img src="images/B (1).png"><div class="overlay">Modern Icons</div></div>
-<div class="card"><img src="images/angel3.jpg"><div class="overlay">Diversity</div></div>
-</div>
-</div>
+<br><br>
 
-<div class="banner">
-<h2>Are There Angels Among Us?</h2>
-<p>Style. Beauty. Strength. A stage where being there is everything.</p>
-<p>We are looking for confidence, presence, and undeniable energy.</p>
-<p>Applications close May 28, 2026.</p>
-</div>
+<a href="angels.html">
+  <button>APPLY NOW</button>
+</a>
 
-</section>
+</div>
 
 </body>
 </html>
+│  <!DOCTYPE html>
+<html>
+<head>
+<title>Backstage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="backstage.html">Backstage</a>
+  <a href="runway.html">Runway</a>
+  <a href="angels.html">Angels</a>
+</div>
+
+<div class="container">
+
+<h1>Backstage</h1>
+
+<div class="grid">
+  <div class="card">
+    <img src="images/vs-class.jpg">
+  </div>
+
+  <div class="card">
+    <img src="images/pink-trio.jpg">
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
+│  runway.html
+│  <!DOCTYPE html>
+<html>
+<head>
+<title>Angels</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="backstage.html">Backstage</a>
+  <a href="runway.html">Runway</a>
+  <a href="angels.html">Angels</a>
+</div>
+
+<div class="container">
+
+<h1>Angels</h1>
+
+<div class="grid">
+  <div class="card">
+    <img src="images/vs-class.jpg">
+  </div>
+
+  <div class="card">
+    <img src="images/runway-main.jpg">
+  </div>
+</div>
+
+<br><br>
+
+<button onclick="alert('Application submitted!')">
+  APPLY NOW
+</button>
+
+</div>
+
+</body>
+</html>
+│  body{
+  margin:0;
+  font-family:Georgia,serif;
+  background:repeating-linear-gradient(90deg,#f7c6d8 0,#f7c6d8 40px,#f3b7cd 40px,#f3b7cd 80px);
+  color:#3a2230;
+}
+
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:20px;
+  background:#c97aa0;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  letter-spacing:2px;
+}
+
+.nav a:hover{
+  text-decoration:underline;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:30px;
+  text-align:center;
+}
+
+h1{
+  font-size:60px;
+  font-style:italic;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.card{
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.card:hover img{
+  transform:scale(1.1);
+}
+
+button{
+  padding:15px 30px;
+  border:none;
+  border-radius:20px;
+  background:#ffe8ef;
+  cursor:pointer;
+  font-size:18px;
+}
+│
+└── images/
+    <!DOCTYPE html>
+<html>
+<head>
+<title>Runway</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="backstage.html">Backstage</a>
+  <a href="runway.html">Runway</a>
+  <a href="angels.html">Angels</a>
+</div>
+
+<div class="container">
+
+<h1>Runway</h1>
+
+<div class="grid">
+  <div class="card">
+    <img src="images/runway-main.jpg">
+  </div>
+
+  <div class="card">
+    <img src="images/pink-trio.jpg">
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
+    vs-class.jpg
+    pink-trio.jpg
