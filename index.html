@@ -21,53 +21,51 @@
             scroll-behavior: smooth;
         }
 
-        /* ===== FULLSCREEN BACKGROUND IMAGE (Victoria's Secret uploaded pic) ===== */
-        /* using the uploaded image as background - placed in same directory */
-        body {
-            background: url('b8e28b23322eefa6ff8e2e73aa4275a9.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        
-        /* dark overlay for readability + iconic pink striped layer OVER the image */
-        .vs-overlay {
+        /* ===== VICTORIA'S SECRET ICONIC VERTICAL STRIPED BACKGROUND ===== */
+        /* Hot pink + darker pink/black straight vertical stripes */
+        .vs-striped-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: -1;
+            z-index: -2;
+            background: linear-gradient(90deg, 
+                #ff1a5e 0%, 
+                #ff1a5e 25%, 
+                #8b0a32 25%, 
+                #8b0a32 50%, 
+                #ff1a5e 50%, 
+                #ff1a5e 75%, 
+                #8b0a32 75%, 
+                #8b0a32 100%);
+            background-size: 80px 100%;
         }
         
-        /* iconic Victoria's Secret pink diagonal stripes floating over image */
-        .vs-stripes {
-            position: fixed;
+        /* secondary overlay to soften and add depth */
+        .vs-striped-bg::before {
+            content: "";
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: repeating-linear-gradient(55deg, 
-                rgba(255, 70, 120, 0.35) 0px, 
-                rgba(255, 70, 120, 0.35) 5px, 
-                transparent 5px, 
-                transparent 38px),
-                repeating-linear-gradient(125deg, 
-                rgba(255, 120, 160, 0.25) 0px, 
-                rgba(255, 120, 160, 0.25) 2px, 
-                transparent 2px, 
-                transparent 30px);
+            background: repeating-linear-gradient(90deg, 
+                rgba(0, 0, 0, 0.15) 0px, 
+                rgba(0, 0, 0, 0.15) 40px, 
+                rgba(0, 0, 0, 0.3) 40px, 
+                rgba(0, 0, 0, 0.3) 80px);
             pointer-events: none;
-            z-index: -1;
         }
         
-        /* pink vignette */
-        .pink-vignette {
+        /* pink glow vignette */
+        .pink-glow {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 30%, rgba(255,140,170,0.1) 0%, rgba(60,15,30,0.7) 90%);
+            background: radial-gradient(circle at 50% 30%, rgba(255, 100, 140, 0.2) 0%, rgba(40, 5, 15, 0.7) 90%);
             pointer-events: none;
             z-index: -1;
         }
@@ -98,7 +96,7 @@
             margin-bottom: 2.5rem;
         }
 
-        /* NO TOP NAVIGATION BAR — removed completely */
+        /* NO TOP NAVIGATION BAR - completely removed */
 
         /* Hero section - VS ENERGY */
         .hero {
@@ -108,19 +106,11 @@
             padding: 2rem 3rem;
             position: relative;
         }
-        .hero::before {
-            content: "";
-            position: absolute;
-            top:0; left:0; width:100%; height:100%;
-            background: linear-gradient(95deg, rgba(80,20,40,0.3) 0%, rgba(0,0,0,0.2) 100%);
-            pointer-events: none;
-            border-radius: 0;
-        }
         .hero-content {
             max-width: 620px;
             position: relative;
             z-index: 3;
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(12px);
             padding: 2.8rem;
             border-radius: 32px;
@@ -173,7 +163,7 @@
             justify-content: center;
             gap: 1.6rem;
             padding: 1rem 2rem;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(8px);
             border-top: 1px solid #ff5a84;
             border-bottom: 1px solid #ff5a84;
@@ -191,7 +181,7 @@
             color: #ff608c;
         }
 
-        /* GALLERY - IMAGES BUILT-IN (no external folder needed) */
+        /* GALLERY - ONLY USES YOUR LOCAL IMAGES FOLDER */
         .gallery-section {
             padding: 5rem 2.5rem;
         }
@@ -215,7 +205,7 @@
         }
         .gallery-img {
             width: 100%;
-            height: 340px;
+            height: 360px;
             object-fit: cover;
             display: block;
         }
@@ -226,6 +216,26 @@
             background: #0f070a;
             color: #ff92b2;
             letter-spacing: 1px;
+        }
+        /* fallback message style */
+        .fallback-message {
+            background: #2a0e18;
+            padding: 15px;
+            text-align: center;
+            border-radius: 16px;
+            color: #ffb0c3;
+            font-size: 0.85rem;
+            border: 1px dashed #ff5a84;
+            margin-top: 1rem;
+        }
+        .fallback-message code {
+            background: #1f0911;
+            padding: 4px 8px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 4px;
+            font-family: monospace;
+            color: #ff9ebe;
         }
 
         /* pink callout */
@@ -254,7 +264,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 2rem;
-            background: rgba(0,0,0,0.55);
+            background: rgba(0,0,0,0.6);
             border-top: 1px solid #ff3b6f;
             border-bottom: 1px solid #ff3b6f;
         }
@@ -298,7 +308,7 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.65);
         }
         .social-icons a {
             color: #ff94b5;
@@ -324,7 +334,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.96);
             backdrop-filter: blur(12px);
             justify-content: center;
             align-items: center;
@@ -369,15 +379,14 @@
     </style>
 </head>
 <body>
-<!-- Background is the uploaded VS image + overlay + pink stripes -->
-<div class="vs-overlay"></div>
-<div class="vs-stripes"></div>
-<div class="pink-vignette"></div>
+<!-- VICTORIA'S SECRET ICONIC VERTICAL STRIPED BACKGROUND (pink + darker pink/black) -->
+<div class="vs-striped-bg"></div>
+<div class="pink-glow"></div>
 
 <div class="wrapper">
     <!-- NO TOP NAV BAR - removed completely as requested -->
 
-    <!-- Hero section with VS energy -->
+    <!-- Hero section -->
     <div class="hero">
         <div class="hero-content">
             <div class="hero-badge"><i class="fas fa-feather-alt"></i> ★ THE NEXT GENERATION ★</div>
@@ -388,7 +397,7 @@
         </div>
     </div>
 
-    <!-- Categories: Victoria's Secret signature tags -->
+    <!-- Categories strip -->
     <div class="categories-strip">
         <span class="cat-item"><i class="fas fa-heart"></i> BEAUTY</span>
         <span class="cat-item"><i class="fas fa-crown"></i> BRAND VALUES</span>
@@ -403,11 +412,11 @@
         <span class="cat-item"><i class="fas fa-microphone-alt"></i> VS VOICES</span>
     </div>
 
-    <!-- GALLERY - EMBEDDED BASE64 IMAGES (so they ALWAYS show up, no external folder needed) -->
+    <!-- GALLERY - ONLY USES YOUR LOCAL IMAGES FOLDER -->
     <div class="gallery-section" id="gallery">
         <div class="section-title"><i class="fas fa-camera-retro"></i> VICTORIA'S SECRET ANGELS</div>
         <div class="gallery-grid" id="dynamicGallery"></div>
-        <p style="text-align: center; margin-top: 1.2rem; font-size: 0.7rem; color: #ff9ebe;"><i class="fas fa-heart"></i> Iconic VS Runway Moments — No external images required</p>
+        <div id="imageHelperMsg" style="margin-top: 1rem; text-align: center;"></div>
     </div>
 
     <!-- iconic VS callout -->
@@ -417,7 +426,7 @@
         <button class="btn-outline" id="calloutApplyBtn" style="background: transparent; border:1.5px solid #ff4d7a; color:#ff8dae; padding:0.7rem 1.8rem; border-radius:60px; font-weight:600; cursor:pointer;">UNLEASH THE ANGEL</button>
     </div>
 
-    <!-- apply section iconic VS -->
+    <!-- apply section -->
     <div class="apply-section" id="apply-now">
         <div class="apply-text">
             <h2>Do you have what it takes?</h2>
@@ -429,7 +438,7 @@
         </div>
     </div>
 
-    <!-- social VS pink -->
+    <!-- social -->
     <div class="social-follow">
         <div><i class="fas fa-video"></i> Follow the casting diaries & behind the velvet scenes</div>
         <div class="social-icons">
@@ -441,12 +450,12 @@
     </div>
 
     <footer>
-        <p>© 2026 ANGELS AMONG — CLASS 2013 / RIA'S SECRET. VICTORIA'S SECRET INSPIRED | PINK EDITION</p>
+        <p>© 2026 ANGELS AMONG — CLASS 2013 / RIA'S SECRET. VICTORIA'S SECRET INSPIRED | PINK STRIPED EDITION</p>
         <p>#AngelsAmong // The Next Generation Casting</p>
     </footer>
 </div>
 
-<!-- MODAL sexy pink-->
+<!-- MODAL -->
 <div id="applicationModal" class="modal">
     <div class="modal-content">
         <span style="float: right; font-size: 1.8rem; cursor: pointer; color:#ff5a84;" id="closeModalBtn">&times;</span>
@@ -469,50 +478,86 @@
 </div>
 
 <script>
-    // ---------- GALLERY WITH EMBEDDED PLACEHOLDER IMAGES (USING UNSPLASH VS-STYLE + ICONIC) ----------
-    // I'm using high-quality fashion/VS-style placeholder images from placeholder images that simulate angelic runway photos.
-    // These are reliable direct image URLs that look like Victoria's Secret Angels (runway, wings, glamour).
-    // This guarantees images show up, no folder needed.
-    const glamImageUrls = [
-        "https://images.pexels.com/photos/3598725/pexels-photo-3598725.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
-        "https://images.pexels.com/photos/2893845/pexels-photo-2893845.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
-        "https://images.pexels.com/photos/3757943/pexels-photo-3757943.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
-        "https://images.pexels.com/photos/3682604/pexels-photo-3682604.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
-        "https://images.pexels.com/photos/3571857/pexels-photo-3571857.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
-        "https://images.pexels.com/photos/14640298/pexels-photo-14640298.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop"
+    // ============================================================
+    // YOUR LOCAL IMAGES FROM "images/" FOLDER
+    // ============================================================
+    // Make sure your files in the "images" folder have these EXACT names:
+    const requiredImages = [
+        "angel-runway.jpg",
+        "angel-portrait1.jpg",
+        "behind-scenes.jpg",
+        "casting-call.jpg",
+        "angel-style.jpg",
+        "vs-tour.jpg"
     ];
     
-    const glamLabels = [
-        "Runway Fantasy", "Pink Angel", "Wings of Desire", "Casting Seduction", "VS Supernova", "Tour Mystique"
+    const sexyLabels = [
+        "Runway Fantasy", "Pink Angel", "Behind the Curtain", 
+        "Casting Seduction", "Wings of Style", "VS Tour Mystique"
     ];
     
-    const galleryContainer = document.getElementById('dynamicGallery');
-    if(galleryContainer) {
-        galleryContainer.innerHTML = '';
-        for(let i = 0; i < glamImageUrls.length; i++) {
+    const galleryDiv = document.getElementById('dynamicGallery');
+    const helperDiv = document.getElementById('imageHelperMsg');
+    let missingCount = 0;
+    
+    if(galleryDiv) {
+        galleryDiv.innerHTML = '';
+        for(let i = 0; i < requiredImages.length; i++) {
+            const imgPath = `images/${requiredImages[i]}`;
             const card = document.createElement('div');
             card.className = 'gallery-card';
             const imgWrap = document.createElement('div');
             const img = document.createElement('img');
             img.className = 'gallery-img';
-            img.src = glamImageUrls[i];
-            img.alt = glamLabels[i];
-            img.loading = "lazy";
-            // if any image fails (unlikely but fallback to another sexy placeholder)
+            img.src = imgPath;
+            img.alt = sexyLabels[i];
+            
+            // Track if image fails to load
             img.onerror = function() {
-                this.src = "https://images.pexels.com/photos/3515833/pexels-photo-3515833.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop";
+                missingCount++;
+                // Replace broken image with a stylized error placeholder that shows the required filename
+                const fallbackDiv = document.createElement('div');
+                fallbackDiv.style.height = '360px';
+                fallbackDiv.style.display = 'flex';
+                fallbackDiv.style.alignItems = 'center';
+                fallbackDiv.style.justifyContent = 'center';
+                fallbackDiv.style.flexDirection = 'column';
+                fallbackDiv.style.backgroundColor = '#2a101b';
+                fallbackDiv.style.borderRadius = '16px';
+                fallbackDiv.innerHTML = `<i class="fas fa-image" style="font-size: 2.8rem; margin-bottom: 12px; color:#ff6b92;"></i>
+                                         <span style="font-weight:bold; background:#1f0911; padding:5px 12px; border-radius:40px;">${requiredImages[i]}</span>
+                                         <span style="font-size:0.75rem; margin-top: 12px;">📁 Place this file in "images/" folder</span>`;
+                imgWrap.innerHTML = '';
+                imgWrap.appendChild(fallbackDiv);
+                
+                // Update helper message
+                helperDiv.innerHTML = `<div class="fallback-message">
+                    <i class="fas fa-folder-open"></i> <strong>Missing some images in your "images/" folder</strong><br>
+                    Make sure these files exist: <br>
+                    ${requiredImages.map(name => `<code>${name}</code>`).join(' ')}
+                </div>`;
             };
+            
             imgWrap.appendChild(img);
             const labelSpan = document.createElement('div');
             labelSpan.className = 'gallery-label';
-            labelSpan.innerHTML = `<i class="fas fa-star-of-life"></i> ${glamLabels[i]} ✦`;
+            labelSpan.innerHTML = `<i class="fas fa-star-of-life"></i> ${sexyLabels[i]} ✦`;
             card.appendChild(imgWrap);
             card.appendChild(labelSpan);
-            galleryContainer.appendChild(card);
+            galleryDiv.appendChild(card);
         }
+        
+        // small delay to check if all images loaded successfully
+        setTimeout(() => {
+            if(missingCount === 0) {
+                helperDiv.innerHTML = `<div style="background: #1f0f15; padding: 8px 20px; border-radius: 60px; display: inline-block; font-size:0.75rem;">
+                                        <i class="fas fa-check-circle" style="color:#ff6b92;"></i> ✨ All 6 angel images loaded from your /images folder! ✨
+                                       </div>`;
+            }
+        }, 500);
     }
-
-    // Modal logic
+    
+    // ---------- MODAL LOGIC ----------
     const modal = document.getElementById('applicationModal');
     const openBtns = ['heroApplyBtn', 'calloutApplyBtn', 'applyNowFooterBtn'];
     openBtns.forEach(id => {
@@ -522,18 +567,19 @@
     const closeModalBtn = document.getElementById('closeModalBtn');
     if(closeModalBtn) closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
     window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
-
+    
     const form = document.getElementById('applyForm');
     if(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert("✨ Thank you, Angel. Your application shines like a true Victoria's Secret star. Our team will contact you if selected for the legendary casting. ✨");
+            alert("✨ Thank you, Angel. Your application radiates confidence like a true Victoria's Secret star. Our team will contact you if selected for the legendary casting. ✨");
             modal.style.display = 'none';
             form.reset();
         });
     }
-
-    console.log("💖 VICTORIA'S SECRET MODE: Background image is your uploaded VS pic + pink diagonal stripes. Gallery uses embedded runway images that always show up!");
+    
+    console.log("💖 VICTORIA'S SECRET STRIPED BACKGROUND: Hot pink + dark pink vertical stripes. Gallery uses your /images folder.");
+    console.log("Required files: ", requiredImages.join(", "));
 </script>
 </body>
 </html>
