@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Angels Among | Sexy Casting 2026</title>
-    <!-- Google Fonts: Sexy & Glam -->
+    <title>Victoria's Secret | Angels Among Us 2026</title>
+    <!-- Google Fonts: high fashion, elegant and bold -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,49 +16,61 @@
         }
 
         body {
-            background-color: #150e0b;
+            background-color: #0a0503;
             font-family: 'Inter', sans-serif;
-            color: #f5efe7;
+            color: #f2e8e0;
             scroll-behavior: smooth;
         }
 
-        /* STRIPED BACKGROUND - sensual diagonal stripes + dark glam gradient */
-        .striped-bg {
+        /* ========= VICTORIA'S SECRET STYLE STRIPED BACKGROUND ========= */
+        /* iconic diagonal stripes reminiscent of VS banners + dark sensual tone */
+        .vs-striped-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -2;
-            background: radial-gradient(circle at 30% 10%, #2c1a14, #0a0503 85%);
+            background: radial-gradient(circle at 20% 30%, #2d1b12, #050201 85%);
         }
-        .striped-bg::before {
+        .vs-striped-bg::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: repeating-linear-gradient(45deg, 
-                rgba(230, 180, 140, 0.12) 0px, 
-                rgba(230, 180, 140, 0.12) 3px, 
-                transparent 3px, 
-                transparent 18px),
-                repeating-linear-gradient(-45deg, 
-                rgba(210, 150, 110, 0.08) 0px, 
-                rgba(210, 150, 110, 0.08) 2px, 
+            background-image: repeating-linear-gradient(55deg, 
+                rgba(220, 160, 110, 0.28) 0px, 
+                rgba(220, 160, 110, 0.28) 4px, 
+                transparent 4px, 
+                transparent 32px),
+                repeating-linear-gradient(125deg, 
+                rgba(200, 130, 80, 0.18) 0px, 
+                rgba(200, 130, 80, 0.18) 2px, 
                 transparent 2px, 
-                transparent 22px);
+                transparent 28px);
             pointer-events: none;
         }
-        /* vignette sexy */
-        .vignette-sexy {
+        /* iconic vignette + glitter overlay */
+        .vignette-vs {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 30%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 95%);
+            background: radial-gradient(circle at 50% 40%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.75) 95%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        /* extra soft shimmer */
+        .shimmer-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,200,150,0.03) 0%, transparent 70%);
             pointer-events: none;
             z-index: -1;
         }
@@ -68,110 +80,120 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
-            backdrop-filter: blur(0px);
         }
 
-        /* sexy typography */
+        /* high fashion typography */
         h1, h2, h3, .logo, .section-title, .callout-quote {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
 
         .section-title {
             font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #f3cfaa, #e3aa7a);
+            font-weight: 800;
+            background: linear-gradient(135deg, #f5d2b0, #e2a074);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            border-left: 5px solid #d9895b;
+            border-left: 6px solid #dd8b5c;
             padding-left: 1.5rem;
             margin-bottom: 2.5rem;
         }
 
-        /* header - glassmorphism sexy */
+        /* VS inspired header - pinkish black glam */
         .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.3rem 2.5rem;
+            padding: 1.2rem 2.5rem;
             flex-wrap: wrap;
-            background: rgba(10, 5, 3, 0.65);
+            background: rgba(0,0,0,0.7);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(221, 147, 93, 0.4);
+            border-bottom: 2px solid rgba(221, 131, 78, 0.5);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         .logo-main {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            letter-spacing: 4px;
-            background: linear-gradient(125deg, #f5d2af, #cf8b5e);
+            letter-spacing: 5px;
+            background: linear-gradient(125deg, #f8dbbc, #e7a170);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .logo-sub {
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            font-weight: 400;
-            color: #cd9775;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            font-weight: 500;
+            color: #e6b68c;
         }
         .nav-links {
             display: flex;
-            gap: 2.2rem;
+            gap: 2.5rem;
             font-weight: 600;
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
         .nav-links a {
-            color: #e9cfb5;
+            color: #f2dbc8;
             text-decoration: none;
-            transition: 0.25s;
+            transition: 0.2s;
         }
         .nav-links a:hover {
-            color: #f5bc8e;
-            text-shadow: 0 0 5px rgba(235, 150, 90, 0.6);
+            color: #f7bc8a;
+            text-shadow: 0 0 6px rgba(247,188,138,0.5);
         }
 
-        /* hero section sexy & dark */
+        /* Hero section - Very Victoria's Secret: bold, sexy, dreamy */
         .hero {
-            min-height: 92vh;
+            min-height: 94vh;
             display: flex;
             align-items: center;
             padding: 2rem 3rem;
             position: relative;
+            background: url('images/hero-main.jpg') no-repeat center 30% / cover;
+            background-blend-mode: overlay;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top:0; left:0; width:100%; height:100%;
+            background: linear-gradient(95deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%);
+            pointer-events: none;
         }
         .hero-content {
-            max-width: 650px;
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(8px);
+            max-width: 620px;
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(10px);
             padding: 2.5rem;
             border-radius: 32px;
-            border: 1px solid rgba(221, 147, 93, 0.5);
-            box-shadow: 0 20px 35px -12px black;
+            border: 1px solid rgba(221, 139, 92, 0.7);
+            box-shadow: 0 20px 35px -10px black;
         }
         .hero-badge {
             font-size: 0.7rem;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             font-weight: 500;
-            color: #e3aa7a;
+            color: #eeb286;
         }
         .hero h1 {
-            font-size: 4.8rem;
+            font-size: 5rem;
             font-weight: 800;
             line-height: 1;
             margin: 1rem 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 12px black;
         }
         .hero-highlight {
             font-size: 1rem;
-            font-weight: 300;
-            margin: 1.2rem 0 2rem;
-            color: #f7e5d6;
+            font-weight: 400;
+            margin: 1rem 0 2rem;
+            color: #faeeda;
         }
         .btn-primary {
             background: #dd8b5c;
@@ -180,109 +202,109 @@
             font-weight: 800;
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #140a06;
+            letter-spacing: 2.5px;
+            color: #140b07;
             border-radius: 60px;
             cursor: pointer;
-            transition: 0.25s;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.4);
+            transition: 0.2s;
+            box-shadow: 0 0 15px rgba(221,139,92,0.4);
         }
         .btn-primary:hover {
             background: #f2a071;
             transform: scale(1.02);
-            letter-spacing: 3px;
+            letter-spacing: 3.5px;
         }
 
-        /* categories - sexy modern */
+        /* categories: VS style chic */
         .categories-strip {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 1.6rem;
-            padding: 1.2rem 2rem;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
-            border-top: 1px solid rgba(221,147,93,0.3);
-            border-bottom: 1px solid rgba(221,147,93,0.3);
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(3px);
+            border-top: 1px solid #d48a5b;
+            border-bottom: 1px solid #d48a5b;
         }
         .cat-item {
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            color: #e9c6a8;
+            color: #f0cfb0;
             letter-spacing: 1px;
         }
         .cat-item i {
-            margin-right: 6px;
-            color: #e39a6a;
+            margin-right: 8px;
+            color: #e79a6c;
         }
 
-        /* GALLERY: sensual, images from folder with sexy fallback */
+        /* GALLERY - images folder / VS themed */
         .gallery-section {
             padding: 5rem 2.5rem;
         }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
         .gallery-card {
-            background: rgba(18, 12, 10, 0.7);
-            backdrop-filter: blur(3px);
+            background: rgba(15, 10, 8, 0.75);
+            backdrop-filter: blur(2px);
             border-radius: 24px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s;
-            border: 1px solid rgba(221,147,93,0.3);
+            transition: all 0.3s cubic-bezier(0.2,0.9,0.4,1.1);
+            border: 1px solid rgba(221,147,93,0.4);
         }
         .gallery-card:hover {
             transform: translateY(-8px) scale(1.01);
-            border-color: rgba(221,147,93,0.8);
-            box-shadow: 0 20px 30px -8px black;
+            border-color: rgba(221,147,93,0.9);
+            box-shadow: 0 20px 30px -5px black;
         }
         .gallery-img {
             width: 100%;
-            height: 320px;
+            height: 340px;
             object-fit: cover;
             display: block;
         }
         .gallery-label {
             padding: 1rem;
             text-align: center;
-            font-weight: 600;
-            background: #0d0907;
-            color: #deaa84;
+            font-weight: 700;
+            background: #0f0906;
+            color: #e3aa82;
             letter-spacing: 1px;
         }
         .img-fallback {
-            height: 320px;
+            height: 340px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #291e18;
-            color: #c98f66;
+            background: #2f1f17;
+            color: #e1aa7c;
             flex-direction: column;
-            font-size: 0.8rem;
             text-align: center;
         }
 
-        /* sexy callout */
+        /* sexy iconic VS quote */
         .callout {
-            background: rgba(0, 0, 0, 0.55);
+            background: linear-gradient(125deg, rgba(0,0,0,0.7), rgba(30,15,8,0.8));
             backdrop-filter: blur(12px);
             margin: 2rem 2rem;
             padding: 3.5rem 2rem;
             text-align: center;
             border-radius: 48px;
-            border: 1px solid #e0a071;
+            border: 1px solid #e49b6b;
         }
         .callout-quote {
-            font-size: 2rem;
-            font-weight: 600;
+            font-size: 2.1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
             font-style: italic;
-            color: #f9e2ce;
+            color: #fae3cf;
         }
 
-        /* apply section sexy glam */
+        /* apply Victoria's Secret style */
         .apply-section {
             padding: 4rem 2.5rem;
             display: flex;
@@ -290,25 +312,26 @@
             justify-content: space-between;
             align-items: center;
             gap: 2rem;
-            background: rgba(0,0,0,0.3);
-            border-top: 1px solid #d9895b;
-            border-bottom: 1px solid #d9895b;
+            background: rgba(0,0,0,0.45);
+            border-top: 1px solid #dd8b5c;
+            border-bottom: 1px solid #dd8b5c;
         }
         .apply-text h2 {
             font-size: 2.6rem;
-            font-weight: 700;
-            background: linear-gradient(125deg, #f3cbaa, #e09b6e);
+            font-weight: 800;
+            background: linear-gradient(125deg, #f3cbaa, #df986b);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .deadline {
-            background: rgba(217, 137, 91, 0.2);
+            background: rgba(221, 139, 92, 0.2);
             display: inline-block;
-            padding: 0.5rem 1.4rem;
-            border-radius: 40px;
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
             margin: 1rem 0;
-            border-left: 2px solid #dd8b5c;
+            border-left: 3px solid #e49b6b;
+            font-weight: 600;
         }
         .apply-btn-large {
             background: linear-gradient(105deg, #dd8b5c, #bd6e42);
@@ -318,55 +341,56 @@
             border: none;
             border-radius: 60px;
             cursor: pointer;
-            transition: all 0.2s;
-            color: #110a06;
+            transition: 0.2s;
+            color: #120b07;
         }
         .apply-btn-large:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
             background: linear-gradient(105deg, #eda277, #cf7f52);
-            box-shadow: 0 5px 15px rgba(221,139,92,0.6);
+            box-shadow: 0 5px 20px rgba(221,139,92,0.7);
         }
 
-        /* social sexy */
+        /* social VS inspired */
         .social-follow {
-            padding: 1.8rem 2.5rem;
+            padding: 1.5rem 2.5rem;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            background: rgba(10,5,3,0.6);
+            background: rgba(0,0,0,0.55);
         }
         .social-icons a {
             color: #e6b187;
-            margin: 0 15px;
+            margin: 0 16px;
             font-size: 1.6rem;
             transition: 0.2s;
         }
         .social-icons a:hover {
-            color: #ffc2a1;
-            text-shadow: 0 0 8px #cc885d;
+            color: #ffc7a2;
+            text-shadow: 0 0 8px #dd8b5c;
         }
+
         footer {
             text-align: center;
             padding: 2rem;
             font-size: 0.7rem;
-            color: #a47253;
+            color: #b67a54;
         }
 
-        /* modal sexy dark */
+        /* MODAL - dark glam */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            backdrop-filter: blur(8px);
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(10px);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
         .modal-content {
-            background: #1f1713;
-            max-width: 480px;
+            background: #1e1511;
+            max-width: 500px;
             width: 90%;
             padding: 2rem;
             border-radius: 32px;
@@ -374,16 +398,16 @@
         }
         .modal-content h3 {
             font-size: 2rem;
-            color: #e6b187;
+            color: #efbc94;
         }
         input, select {
             width: 100%;
             padding: 0.8rem;
             margin: 0.6rem 0;
-            background: #2f231e;
-            border: 1px solid #ac7657;
+            background: #31231d;
+            border: 1px solid #aa7657;
             border-radius: 60px;
-            color: white;
+            color: #f0e0d4;
         }
         .modal-btn {
             background: #dd8b5c;
@@ -391,46 +415,47 @@
             padding: 0.9rem;
             border-radius: 60px;
             font-weight: bold;
-            margin-top: 0.8rem;
+            margin-top: 1rem;
         }
 
         @media (max-width: 800px) {
             .hero h1 { font-size: 2.8rem; }
-            .hero-content { padding: 1.5rem; }
-            .section-title { font-size: 2rem; }
+            .hero-content { padding: 1.2rem; }
+            .section-title { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-<div class="striped-bg"></div>
-<div class="vignette-sexy"></div>
+<div class="vs-striped-bg"></div>
+<div class="vignette-vs"></div>
+<div class="shimmer-layer"></div>
 
 <div class="wrapper">
     <div class="top-bar">
         <div class="logo-area">
             <div class="logo-main">✦ ANGELS AMONG ✦</div>
-            <div class="logo-sub">CLASS 2013 · RIA'S SECRET · SENSUAL EDITION</div>
+            <div class="logo-sub">CLASS 2013 · VICTORIA'S SECRET INSPIRED</div>
         </div>
         <div class="nav-links">
             <a href="#">HOME</a>
-            <a href="#gallery">SENSUAL GALLERY</a>
-            <a href="#apply-now">THE CASTING</a>
-            <a href="#sexy-call">VELVET STAGE</a>
+            <a href="#gallery">RUNWAY GALLERY</a>
+            <a href="#apply-now">VS CASTING</a>
+            <a href="#sexy-call">THE SPECTACLE</a>
         </div>
     </div>
 
-    <!-- Hero Sexy -->
-    <div class="hero" style="background: url('images/hero-bg.jpg') center 20% / cover no-repeat; background-blend-mode: overlay;">
+    <!-- Hero with iconic VS style -->
+    <div class="hero" style="background-image: url('images/hero-main.jpg'); background-size: cover; background-position: top 20% right 0%;">
         <div class="hero-content">
-            <div class="hero-badge"><i class="fas fa-feather-alt"></i> ★ EXCLUSIVE AWAKENING ★</div>
+            <div class="hero-badge"><i class="fas fa-feather-alt"></i> ★ THE NEXT GENERATION ★</div>
             <h1>Calling All<br>Angels</h1>
             <p class="hero-highlight">The world will look again this fall. Style. Beauty. Strength. A stage where being there is everything, and only a few are chosen.</p>
             <button class="btn-primary" id="heroApplyBtn">✦ APPLY NOW ✦</button>
-            <p style="margin-top: 1.2rem; font-size: 0.7rem; letter-spacing: 1px;"><i class="far fa-calendar-alt"></i> Final Gate: May 28, 2026</p>
+            <p style="margin-top: 1rem; font-size: 0.7rem; letter-spacing: 1px;"><i class="far fa-calendar-alt"></i> Final Deadline: May 28, 2026</p>
         </div>
     </div>
 
-    <!-- categories sexy strip -->
+    <!-- Categories: Victoria's Secret signature tags -->
     <div class="categories-strip">
         <span class="cat-item"><i class="fas fa-heart"></i> BEAUTY</span>
         <span class="cat-item"><i class="fas fa-crown"></i> BRAND VALUES</span>
@@ -445,25 +470,25 @@
         <span class="cat-item"><i class="fas fa-microphone-alt"></i> VS VOICES</span>
     </div>
 
-    <!-- GALLERY (images from /images folder) sexy -->
+    <!-- GALLERY - images from folder: very VS angelic -->
     <div class="gallery-section" id="gallery">
-        <div class="section-title"><i class="fas fa-camera"></i> ANGELIC SENSUALITY</div>
+        <div class="section-title"><i class="fas fa-camera-retro"></i> VICTORIA'S SECRET ANGELS</div>
         <div class="gallery-grid" id="dynamicGallery"></div>
-        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.7rem; opacity: 0.7;"><i class="fas fa-folder-open"></i> high-fashion shots from /images/ folder (angel-runway.jpg, angel-portrait1.jpg, behind-scenes.jpg, casting-call.jpg, angel-style.jpg, vs-tour.jpg)</p>
+        <p style="text-align: center; margin-top: 1.2rem; font-size: 0.7rem; opacity: 0.8;"><i class="fas fa-folder-open"></i> Images from /images/ folder: angel-runway.jpg, angel-portrait1.jpg, behind-scenes.jpg, casting-call.jpg, angel-style.jpg, vs-tour.jpg</p>
     </div>
 
-    <!-- sexy callout -->
+    <!-- iconic callout -->
     <div id="sexy-call" class="callout">
         <div class="callout-quote">“This is more than just a runway. It’s a moment for the whole world.”</div>
-        <p style="margin: 1rem auto; max-width: 600px;">Some applicants will get the chance to walk in a famous show and be considered for exclusive representation.</p>
-        <button class="btn-outline" id="calloutApplyBtn" style="background: transparent; border:1px solid #dd8b5c; color:#dd8b5c; padding:0.6rem 1.5rem; border-radius:60px;">UNLEASH YOUR ANGEL</button>
+        <p style="margin: 1rem auto; max-width: 600px; font-weight: 300;">Some applicants will get the chance to walk in the famous VS show and be considered for exclusive representation.</p>
+        <button class="btn-outline" id="calloutApplyBtn" style="background: transparent; border:1.5px solid #dd8b5c; color:#dd8b5c; padding:0.7rem 1.8rem; border-radius:60px; font-weight:600;">UNLEASH THE ANGEL</button>
     </div>
 
-    <!-- apply now sexy -->
+    <!-- apply section iconic VS -->
     <div class="apply-section" id="apply-now">
         <div class="apply-text">
             <h2>Do you have what it takes?</h2>
-            <p>We are looking for the next group of Angels. People full of confidence, charm, and energy that can’t be denied. Take your place on the world's most seductive runway.</p>
+            <p>We are looking for the next group of Angels. People full of confidence, charm, and undeniable energy. Walk the most seductive runway on earth.</p>
             <div class="deadline"><i class="fas fa-hourglass-half"></i> FINAL DEADLINE: MAY 28, 2026</div>
         </div>
         <div>
@@ -471,7 +496,7 @@
         </div>
     </div>
 
-    <!-- social with sexy vibe -->
+    <!-- social VS -->
     <div class="social-follow">
         <div><i class="fas fa-video"></i> Follow the casting diaries & behind the velvet scenes</div>
         <div class="social-icons">
@@ -483,36 +508,36 @@
     </div>
 
     <footer>
-        <p>© 2026 ANGELS AMONG — RIA'S SECRET / CLASS 2013. SENSUAL EMPIRE | ALL RIGHTS RESERVED</p>
-        <p>#AngelsAmong // The Next Generation</p>
+        <p>© 2026 ANGELS AMONG — CLASS 2013 / RIA'S SECRET. VICTORIA'S SECRET INSPIRED | ALL RIGHTS RESERVED</p>
+        <p>#AngelsAmong // The Next Generation Casting</p>
     </footer>
 </div>
 
-<!-- modal sexy -->
+<!-- MODAL sexy-->
 <div id="applicationModal" class="modal">
     <div class="modal-content">
         <span style="float: right; font-size: 1.8rem; cursor: pointer; color:#dd8b5c;" id="closeModalBtn">&times;</span>
         <h3>Become an Angel</h3>
-        <p style="margin-bottom: 1rem;">your exclusive application to heaven.</p>
+        <p style="margin-bottom: 0.8rem;">Your application to the iconic runway.</p>
         <form id="applyForm">
             <input type="text" placeholder="Full name" required>
             <input type="email" placeholder="Email address" required>
             <input type="text" placeholder="City / Country">
             <select>
-                <option>Discover us via</option>
+                <option>How did you hear about us?</option>
+                <option>Victoria's Secret Show</option>
                 <option>Instagram / TikTok</option>
                 <option>Angel Referral</option>
-                <option>Fashion insider</option>
             </select>
-            <button type="submit" class="modal-btn"><i class="fas fa-crown"></i> SUBMIT FOR THE CASTING</button>
+            <button type="submit" class="modal-btn"><i class="fas fa-crown"></i> SUBMIT FOR CASTING</button>
             <p style="font-size:0.65rem; margin-top:1rem;">Exclusive representation & famous show consideration.</p>
         </form>
     </div>
 </div>
 
 <script>
-    // ---- GALLERY with images from FOLDER & sexy fallback ----
-    const imageList = [
+    // ---------- GALLERY from /images folder with VS style ----------
+    const imageFiles = [
         "angel-runway.jpg",
         "angel-portrait1.jpg",
         "behind-scenes.jpg",
@@ -520,77 +545,76 @@
         "angel-style.jpg",
         "vs-tour.jpg"
     ];
-    const glamLabels = [
-        "Runway Seduction", "Velvet Angel", "Behind the Curtains", "Casting Heat", "Silhouette Muse", "Tour Mystique"
+    const sexyLabels = [
+        "Runway Fantasy", "Golden Angel", "Behind the Curtain", "Casting Seduction", "Wings of Style", "VS Tour Mystique"
     ];
-    const galleryDiv = document.getElementById('dynamicGallery');
-    if(galleryDiv) {
-        galleryDiv.innerHTML = '';
-        for(let i = 0; i < imageList.length; i++) {
-            const imgPath = `images/${imageList[i]}`;
+    const galleryContainer = document.getElementById('dynamicGallery');
+    if(galleryContainer) {
+        galleryContainer.innerHTML = '';
+        for(let i=0; i<imageFiles.length; i++) {
+            const imgSrc = `images/${imageFiles[i]}`;
             const card = document.createElement('div');
             card.className = 'gallery-card';
-            const imgWrap = document.createElement('div');
+            const imgWrapper = document.createElement('div');
             const img = document.createElement('img');
             img.className = 'gallery-img';
-            img.src = imgPath;
-            img.alt = glamLabels[i];
+            img.src = imgSrc;
+            img.alt = sexyLabels[i];
             img.onerror = function() {
-                // fallback with sexy placeholder 
                 const fallbackDiv = document.createElement('div');
                 fallbackDiv.className = 'img-fallback';
-                fallbackDiv.innerHTML = `<i class="fas fa-image" style="font-size: 2.4rem; margin-bottom: 10px; opacity:0.8;"></i><span style="font-weight:600;">${imageList[i]}</span><span style="font-size:0.7rem; margin-top: 8px;">✨ add to /images/ ✨</span><span style="font-size:0.7rem;">angel photo here</span>`;
-                imgWrap.innerHTML = '';
-                imgWrap.appendChild(fallbackDiv);
+                fallbackDiv.innerHTML = `<i class="fas fa-image" style="font-size: 2.4rem; margin-bottom: 10px;"></i><span style="font-weight:bold;">${imageFiles[i]}</span><span style="font-size:0.75rem; margin-top: 6px;">✨ place in /images/ ✨</span><span style="font-size:0.7rem;">add VS angel photo</span>`;
+                imgWrapper.innerHTML = '';
+                imgWrapper.appendChild(fallbackDiv);
             };
-            imgWrap.appendChild(img);
-            const label = document.createElement('div');
-            label.className = 'gallery-label';
-            label.innerHTML = `<i class="fas fa-star"></i> ${glamLabels[i]} ✦`;
-            card.appendChild(imgWrap);
-            card.appendChild(label);
-            galleryDiv.appendChild(card);
+            imgWrapper.appendChild(img);
+            const labelSpan = document.createElement('div');
+            labelSpan.className = 'gallery-label';
+            labelSpan.innerHTML = `<i class="fas fa-star"></i> ${sexyLabels[i]} ✦`;
+            card.appendChild(imgWrapper);
+            card.appendChild(labelSpan);
+            galleryContainer.appendChild(card);
         }
     }
 
-    // Modal and form logic
+    // modal handling
     const modal = document.getElementById('applicationModal');
-    const openBtns = ['heroApplyBtn', 'calloutApplyBtn', 'applyNowFooterBtn'];
-    openBtns.forEach(id => {
+    const openModalBtns = ['heroApplyBtn', 'calloutApplyBtn', 'applyNowFooterBtn'];
+    openModalBtns.forEach(id => {
         const btn = document.getElementById(id);
         if(btn) btn.addEventListener('click', () => modal.style.display = 'flex');
     });
-    const closeModal = document.getElementById('closeModalBtn');
-    if(closeModal) closeModal.addEventListener('click', () => modal.style.display = 'none');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    if(closeModalBtn) closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
     window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
 
     const form = document.getElementById('applyForm');
     if(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert("✨ Your application radiates power. Our team will contact the chosen few for the next phase. The famous show awaits. ✨");
+            alert("✨ Thank you, Angel. Your application shines like a diamond. Our team will contact you if you are selected for the next phase of the legendary Victoria's Secret style casting. ✨");
             modal.style.display = 'none';
             form.reset();
         });
     }
 
-    // smooth nav sexy
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function(e) {
+    // smooth scroll VS nav
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if(href && href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href.substring(1);
-                const el = document.getElementById(targetId);
-                if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                let targetEl = document.getElementById(targetId);
+                if(targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 else if(targetId === 'sexy-call') document.getElementById('sexy-call')?.scrollIntoView({behavior:'smooth'});
                 else if(targetId === 'apply-now') document.getElementById('apply-now')?.scrollIntoView({behavior:'smooth'});
                 else if(targetId === 'gallery') document.getElementById('gallery')?.scrollIntoView({behavior:'smooth'});
             }
         });
     });
-
-    console.log("🔥 STRIPED SENSUAL MODE: Ensure images folder contains the 6 JPGs (angel-runway.jpg, angel-portrait1.jpg, behind-scenes.jpg, casting-call.jpg, angel-style.jpg, vs-tour.jpg) for full visual impact");
+    
+    console.log("💋 VICTORIA'S SECRET STRIPED EDITION: Make sure images folder contains the 6 JPGs for best experience (angel-runway.jpg, angel-portrait1.jpg, behind-scenes.jpg, casting-call.jpg, angel-style.jpg, vs-tour.jpg)");
 </script>
 </body>
 </html>
