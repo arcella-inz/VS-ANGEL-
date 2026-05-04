@@ -181,7 +181,7 @@
             color: #ff608c;
         }
 
-        /* GALLERY - ONLY USES YOUR LOCAL IMAGES FOLDER */
+        /* GALLERY - ONLY USES YOUR EXACT IMAGE FILES FROM /images FOLDER */
         .gallery-section {
             padding: 5rem 2.5rem;
         }
@@ -412,7 +412,7 @@
         <span class="cat-item"><i class="fas fa-microphone-alt"></i> VS VOICES</span>
     </div>
 
-    <!-- GALLERY - ONLY USES YOUR LOCAL IMAGES FOLDER -->
+    <!-- GALLERY - USING YOUR EXACT IMAGE FILES FROM /images FOLDER -->
     <div class="gallery-section" id="gallery">
         <div class="section-title"><i class="fas fa-camera-retro"></i> VICTORIA'S SECRET ANGELS</div>
         <div class="gallery-grid" id="dynamicGallery"></div>
@@ -479,31 +479,34 @@
 
 <script>
     // ============================================================
-    // YOUR LOCAL IMAGES FROM "images/" FOLDER
+    // YOUR EXACT IMAGE FILES FROM "images/" FOLDER
+    // Using the filenames you provided:
+    // vs (2).jpg, vs fashion show.jpg, vs(3).jpg, vs(4).jpg, B(3).jpg, vs.jpg, B(2).jpg
     // ============================================================
-    // Make sure your files in the "images" folder have these EXACT names:
-    const requiredImages = [
-        "angel-runway.jpg",
-        "angel-portrait1.jpg",
-        "behind-scenes.jpg",
-        "casting-call.jpg",
-        "angel-style.jpg",
-        "vs-tour.jpg"
+    const imageFiles = [
+        "vs (2).jpg",
+        "vs fashion show.jpg",
+        "vs(3).jpg",
+        "vs(4).jpg",
+        "B(3).jpg",
+        "vs.jpg",
+        "B(2).jpg"
     ];
     
     const sexyLabels = [
-        "Runway Fantasy", "Pink Angel", "Behind the Curtain", 
-        "Casting Seduction", "Wings of Style", "VS Tour Mystique"
+        "Runway Fantasy", "Pink Angel", "VS Tour Mystique", 
+        "Casting Seduction", "Wings of Style", "Iconic Angel", "Behind the Velvet"
     ];
     
     const galleryDiv = document.getElementById('dynamicGallery');
     const helperDiv = document.getElementById('imageHelperMsg');
     let missingCount = 0;
+    let loadedCount = 0;
     
     if(galleryDiv) {
         galleryDiv.innerHTML = '';
-        for(let i = 0; i < requiredImages.length; i++) {
-            const imgPath = `images/${requiredImages[i]}`;
+        for(let i = 0; i < imageFiles.length; i++) {
+            const imgPath = `images/${imageFiles[i]}`;
             const card = document.createElement('div');
             card.className = 'gallery-card';
             const imgWrap = document.createElement('div');
@@ -511,6 +514,16 @@
             img.className = 'gallery-img';
             img.src = imgPath;
             img.alt = sexyLabels[i];
+            
+            // Track if image loads successfully
+            img.onload = function() {
+                loadedCount++;
+                if(loadedCount === imageFiles.length && missingCount === 0) {
+                    helperDiv.innerHTML = `<div style="background: #1f0f15; padding: 8px 20px; border-radius: 60px; display: inline-block; font-size:0.75rem;">
+                                            <i class="fas fa-check-circle" style="color:#ff6b92;"></i> ✨ All ${imageFiles.length} VS angel images loaded from your /images folder! ✨
+                                           </div>`;
+                }
+            };
             
             // Track if image fails to load
             img.onerror = function() {
@@ -525,16 +538,18 @@
                 fallbackDiv.style.backgroundColor = '#2a101b';
                 fallbackDiv.style.borderRadius = '16px';
                 fallbackDiv.innerHTML = `<i class="fas fa-image" style="font-size: 2.8rem; margin-bottom: 12px; color:#ff6b92;"></i>
-                                         <span style="font-weight:bold; background:#1f0911; padding:5px 12px; border-radius:40px;">${requiredImages[i]}</span>
+                                         <span style="font-weight:bold; background:#1f0911; padding:5px 12px; border-radius:40px;">${imageFiles[i]}</span>
                                          <span style="font-size:0.75rem; margin-top: 12px;">📁 Place this file in "images/" folder</span>`;
                 imgWrap.innerHTML = '';
                 imgWrap.appendChild(fallbackDiv);
                 
-                // Update helper message
+                // Update helper message with all missing files
                 helperDiv.innerHTML = `<div class="fallback-message">
-                    <i class="fas fa-folder-open"></i> <strong>Missing some images in your "images/" folder</strong><br>
-                    Make sure these files exist: <br>
-                    ${requiredImages.map(name => `<code>${name}</code>`).join(' ')}
+                    <i class="fas fa-folder-open"></i> <strong>⚠️ Some images are missing in your "images/" folder</strong><br>
+                    Make sure these files exist (spelling and spaces matter!): <br>
+                    ${imageFiles.map(name => `<code>${name}</code>`).join(' ')}
+                    <br><br>
+                    <i class="fas fa-info-circle"></i> Your folder should contain these exact filenames.
                 </div>`;
             };
             
@@ -547,14 +562,18 @@
             galleryDiv.appendChild(card);
         }
         
-        // small delay to check if all images loaded successfully
+        // If no images loaded after timeout, show helper
         setTimeout(() => {
-            if(missingCount === 0) {
-                helperDiv.innerHTML = `<div style="background: #1f0f15; padding: 8px 20px; border-radius: 60px; display: inline-block; font-size:0.75rem;">
-                                        <i class="fas fa-check-circle" style="color:#ff6b92;"></i> ✨ All 6 angel images loaded from your /images folder! ✨
-                                       </div>`;
+            if(loadedCount === 0 && missingCount > 0) {
+                helperDiv.innerHTML = `<div class="fallback-message">
+                    <i class="fas fa-folder-open"></i> <strong>📁 No images found in your "images/" folder</strong><br>
+                    Please create an "images" folder next to this HTML file and add these files:<br>
+                    ${imageFiles.map(name => `<code>${name}</code>`).join(' ')}
+                    <br><br>
+                    <i class="fas fa-heart" style="color:#ff6b92;"></i> Once added, refresh the page and your Victoria's Secret gallery will appear!
+                </div>`;
             }
-        }, 500);
+        }, 800);
     }
     
     // ---------- MODAL LOGIC ----------
@@ -578,8 +597,8 @@
         });
     }
     
-    console.log("💖 VICTORIA'S SECRET STRIPED BACKGROUND: Hot pink + dark pink vertical stripes. Gallery uses your /images folder.");
-    console.log("Required files: ", requiredImages.join(", "));
+    console.log("💖 VICTORIA'S SECRET STRIPED BACKGROUND: Hot pink + dark pink vertical stripes.");
+    console.log("Looking for these image files in the 'images' folder: ", imageFiles.join(", "));
 </script>
 </body>
 </html>
