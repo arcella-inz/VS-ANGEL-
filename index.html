@@ -181,7 +181,7 @@
             color: #ff608c;
         }
 
-        /* GALLERY - ONLY USES YOUR EXACT IMAGE FILES FROM /images FOLDER */
+        /* GALLERY - USING YOUR EXACT IMAGE FILES FROM /images FOLDER */
         .gallery-section {
             padding: 5rem 2.5rem;
         }
@@ -413,6 +413,15 @@
     </div>
 
     <!-- GALLERY - USING YOUR EXACT IMAGE FILES FROM /images FOLDER -->
+    <!-- MAPPING: 
+         Index 0: vs (2).jpg -> "Pink Angel"
+         Index 1: vs fashion show.jpg -> "Runway Fantasy"
+         Index 2: vs(3).jpg -> "VS Tour Mystique"
+         Index 3: vs(4).jpg -> "Casting Seduction"
+         Index 4: vss.jpg -> "Wings of Style" (NEW)
+         Index 5: vs.jpg -> "Iconic Angel"
+         Index 6: 33f9fa55115776c99faeede46c9014a0.jpg -> "Behind the Velvet" (NEW)
+    -->
     <div class="gallery-section" id="gallery">
         <div class="section-title"><i class="fas fa-camera-retro"></i> VICTORIA'S SECRET ANGELS</div>
         <div class="gallery-grid" id="dynamicGallery"></div>
@@ -480,22 +489,29 @@
 <script>
     // ============================================================
     // YOUR EXACT IMAGE FILES FROM "images/" FOLDER
-    // Using the filenames you provided:
-    // vs (2).jpg, vs fashion show.jpg, vs(3).jpg, vs(4).jpg, B(3).jpg, vs.jpg, B(2).jpg
+    // UPDATED MAPPING with the two new images:
+    // - vss.jpg for "Wings of Style" (index 4)
+    // - 33f9fa55115776c99faeede46c9014a0.jpg for "Behind the Velvet" (index 6)
     // ============================================================
     const imageFiles = [
         "vs (2).jpg",
         "vs fashion show.jpg",
         "vs(3).jpg",
         "vs(4).jpg",
-        "B(3).jpg",
+        "vss.jpg",           // NEW: Wings of Style
         "vs.jpg",
-        "B(2).jpg"
+        "33f9fa55115776c99faeede46c9014a0.jpg"   // NEW: Behind the Velvet
     ];
     
+    // Labels remain in swapped order (Pink Angel first, then Runway Fantasy)
     const sexyLabels = [
-        "Runway Fantasy", "Pink Angel", "VS Tour Mystique", 
-        "Casting Seduction", "Wings of Style", "Iconic Angel", "Behind the Velvet"
+        "Pink Angel",           // Index 0 - vs (2).jpg
+        "Runway Fantasy",       // Index 1 - vs fashion show.jpg
+        "VS Tour Mystique",     // Index 2 - vs(3).jpg
+        "Casting Seduction",    // Index 3 - vs(4).jpg
+        "Wings of Style",       // Index 4 - vss.jpg (UPDATED)
+        "Iconic Angel",         // Index 5 - vs.jpg
+        "Behind the Velvet"     // Index 6 - 33f9fa55115776c99faeede46c9014a0.jpg (UPDATED)
     ];
     
     const galleryDiv = document.getElementById('dynamicGallery');
@@ -539,7 +555,8 @@
                 fallbackDiv.style.borderRadius = '16px';
                 fallbackDiv.innerHTML = `<i class="fas fa-image" style="font-size: 2.8rem; margin-bottom: 12px; color:#ff6b92;"></i>
                                          <span style="font-weight:bold; background:#1f0911; padding:5px 12px; border-radius:40px;">${imageFiles[i]}</span>
-                                         <span style="font-size:0.75rem; margin-top: 12px;">📁 Place this file in "images/" folder</span>`;
+                                         <span style="font-size:0.75rem; margin-top: 12px;">📁 Place this file in "images/" folder</span>
+                                         <span style="font-size:0.7rem; margin-top: 6px;">for "${sexyLabels[i]}"</span>`;
                 imgWrap.innerHTML = '';
                 imgWrap.appendChild(fallbackDiv);
                 
@@ -599,6 +616,9 @@
     
     console.log("💖 VICTORIA'S SECRET STRIPED BACKGROUND: Hot pink + dark pink vertical stripes.");
     console.log("Looking for these image files in the 'images' folder: ", imageFiles.join(", "));
+    console.log("Labels: ", sexyLabels);
+    console.log("✅ UPDATED: 'vss.jpg' is now 'Wings of Style' (index 4)");
+    console.log("✅ UPDATED: '33f9fa55115776c99faeede46c9014a0.jpg' is now 'Behind the Velvet' (index 6)");
 </script>
 </body>
 </html>
