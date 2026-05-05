@@ -57,6 +57,7 @@
         .cat-item {
             font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #ffbfd2;
             letter-spacing: 1px; cursor: pointer; transition: 0.2s; background: none; border: none;
+            font-family: inherit;
         }
         .cat-item i { margin-right: 8px; color: #ff608c; }
         .cat-item:hover { color: #ff4d7a; transform: translateY(-2px); text-shadow: 0 0 5px #ff2e64; }
@@ -90,7 +91,7 @@
         }
         .apply-btn-large:hover { transform: scale(1.02); background: linear-gradient(105deg, #ff4d7a, #e62e5c); box-shadow: 0 5px 20px rgba(255,46,100,0.7); }
         .social-follow { padding: 1.5rem 2.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; background: rgba(0,0,0,0.65); }
-        .social-icons a { color: #ff94b5; margin: 0 16px; font-size: 1.6rem; transition: 0.2s; }
+        .social-icons a { color: #ff94b5; margin: 0 16px; font-size: 1.6rem; transition: 0.2s; text-decoration: none; display: inline-block; }
         .social-icons a:hover { color: #ff4d7a; text-shadow: 0 0 8px #ff3b6f; }
         footer { text-align: center; padding: 2rem; font-size: 0.7rem; color: #ff88aa; }
         .modal {
@@ -101,7 +102,7 @@
         .modal-content { background: #1c0b12; max-width: 500px; width: 90%; padding: 2rem; border-radius: 32px; border: 1px solid #ff3b6f; }
         .modal-content h3 { font-size: 2rem; color: #ff98bb; }
         input, select { width: 100%; padding: 0.8rem; margin: 0.6rem 0; background: #2f1822; border: 1px solid #ff6b92; border-radius: 60px; color: #ffded2; }
-        .modal-btn { background: #ff2e64; width: 100%; padding: 0.9rem; border-radius: 60px; font-weight: bold; margin-top: 1rem; }
+        .modal-btn { background: #ff2e64; width: 100%; padding: 0.9rem; border-radius: 60px; font-weight: bold; margin-top: 1rem; cursor: pointer; border: none; }
         @media (max-width: 800px) { .hero h1 { font-size: 2.8rem; } .hero-content { padding: 1.5rem; } .section-title { font-size: 1.8rem; } }
     </style>
 </head>
@@ -120,6 +121,7 @@
         </div>
     </div>
 
+    <!-- ALL 11 CATEGORY BUTTONS - FULLY FUNCTIONAL -->
     <div class="categories-strip">
         <button class="cat-item" data-category="beauty"><i class="fas fa-heart"></i> BEAUTY</button>
         <button class="cat-item" data-category="brand"><i class="fas fa-crown"></i> BRAND VALUES</button>
@@ -134,6 +136,7 @@
         <button class="cat-item" data-category="voices"><i class="fas fa-microphone-alt"></i> VS VOICES</button>
     </div>
 
+    <!-- GALLERY - ALL 7 IMAGES REMAIN ON MAIN PAGE, CLICKABLE -->
     <div class="gallery-section" id="gallery">
         <div class="section-title"><i class="fas fa-camera-retro"></i> VICTORIA'S SECRET ANGELS</div>
         <div class="gallery-grid" id="dynamicGallery"></div>
@@ -194,7 +197,7 @@
 
 <script>
     // ============================================================
-    // FUNCTION TO OPEN A NEW PAGE FOR CATEGORIES (ALL 11 FUNCTIONAL)
+    // FUNCTION TO OPEN DETAIL PAGE FOR CATEGORIES (LEADS SOMEWHERE!)
     // ============================================================
     function openCategoryPage(categoryName, categoryDesc, iconClass, features) {
         const catWindow = window.open('', '_blank');
@@ -260,7 +263,7 @@
         voices: { name: "VS VOICES", desc: "Hear from Angels, designers, and industry insiders. The voices that shape the Victoria's Secret world.", icon: "fas fa-microphone-alt", features: [{ icon: "fas fa-podcast", title: "Angel Talks", desc: "Podcasts with VS legends." }, { icon: "fas fa-newspaper", title: "Interviews", desc: "Exclusive Q&As and editorials." }, { icon: "fas fa-users", title: "Community", desc: "Join the conversation with VS fans." }] }
     };
 
-    // Make all category buttons functional
+    // Make all category buttons functional - THEY LEAD TO NEW PAGES NOW
     document.querySelectorAll('.cat-item').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -273,7 +276,7 @@
     });
 
     // ============================================================
-    // GALLERY IMAGES - ALL CLICKABLE TO OPEN ANGEL DETAIL PAGES
+    // GALLERY IMAGES - ALL REMAIN ON MAIN PAGE, CLICKABLE TO OPEN ANGEL PAGES
     // ============================================================
     const imageFiles = ["vs (2).jpg", "vs fashion show.jpg", "vs(3).jpg", "vs(4).jpg", "vss.jpg", "vs.jpg", "33f9fa55115776c99faeede46c9014a0.jpg"];
     const sexyLabels = ["Pink Angel", "Runway Fantasy", "VS Tour Mystique", "Casting Seduction", "Wings of Style", "Iconic Angel", "Behind the Velvet"];
@@ -313,13 +316,4 @@
         .angel-hero img { width: 100%; max-width: 500px; border-radius: 32px; border: 2px solid #ff6b92; box-shadow: 0 20px 35px -10px black; object-fit: cover; height: 500px; }
         .angel-info h1 { font-size: 3.5rem; font-family: 'Playfair Display', serif; background: linear-gradient(135deg, #ffb6d0, #ff7096); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; }
         .angel-info p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; color: #ffded2; }
-        .quote { font-style: italic; font-size: 1.3rem; border-left: 4px solid #ff4d7a; padding-left: 1.5rem; margin: 2rem 0; color: #ffbfd2; }
-        @media (max-width: 800px) { .angel-hero { flex-direction: column; } .angel-info h1 { font-size: 2rem; } }
-    </style>
-</head>
-<body>
-    <div class="detail-container">
-        <button class="back-btn" onclick="window.close()"><i class="fas fa-arrow-left"></i> BACK TO MAIN PAGE</button>
-        <div class="angel-hero">
-            <img src="${imagePath}" alt="${angelName}" onerror="this.src='https://placehold.co/600x800/ff1a5e/white?text=VS+Angel
-            
+        .quote { font-style: italic; font-size: 1.3rem; border-left: 4px solid #ff4d7a; padding-left: 
