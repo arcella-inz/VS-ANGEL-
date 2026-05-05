@@ -22,7 +22,6 @@
         }
 
         /* ===== VICTORIA'S SECRET ICONIC VERTICAL STRIPED BACKGROUND ===== */
-        /* Hot pink + darker pink/black straight vertical stripes */
         .vs-striped-bg {
             position: fixed;
             top: 0;
@@ -42,7 +41,6 @@
             background-size: 80px 100%;
         }
         
-        /* secondary overlay to soften and add depth */
         .vs-striped-bg::before {
             content: "";
             position: absolute;
@@ -58,7 +56,6 @@
             pointer-events: none;
         }
         
-        /* pink glow vignette */
         .pink-glow {
             position: fixed;
             top: 0;
@@ -77,7 +74,6 @@
             z-index: 2;
         }
 
-        /* sexy typography with pink glow */
         h1, h2, h3, .logo, .section-title, .callout-quote {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -96,9 +92,7 @@
             margin-bottom: 2.5rem;
         }
 
-        /* NO TOP NAVIGATION BAR - completely removed */
-
-        /* Hero section - VS ENERGY */
+        /* Hero section */
         .hero {
             min-height: 88vh;
             display: flex;
@@ -156,7 +150,7 @@
             letter-spacing: 3.5px;
         }
 
-        /* categories strip pink */
+        /* categories strip - NOW ALL CLICKABLE LINKS */
         .categories-strip {
             display: flex;
             flex-wrap: wrap;
@@ -175,13 +169,22 @@
             text-transform: uppercase;
             color: #ffbfd2;
             letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
         }
         .cat-item i {
             margin-right: 8px;
             color: #ff608c;
         }
+        .cat-item:hover {
+            color: #ff4d7a;
+            transform: translateY(-2px);
+            text-shadow: 0 0 5px #ff2e64;
+        }
 
-        /* GALLERY - USING YOUR EXACT IMAGE FILES FROM /images FOLDER */
+        /* GALLERY - clickable cards */
         .gallery-section {
             padding: 5rem 2.5rem;
         }
@@ -197,6 +200,10 @@
             overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid #ff6b92;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
         }
         .gallery-card:hover {
             transform: translateY(-8px);
@@ -217,7 +224,6 @@
             color: #ff92b2;
             letter-spacing: 1px;
         }
-        /* fallback message style */
         .fallback-message {
             background: #2a0e18;
             padding: 15px;
@@ -238,7 +244,7 @@
             color: #ff9ebe;
         }
 
-        /* pink callout */
+        /* callout */
         .callout {
             background: linear-gradient(125deg, rgba(0,0,0,0.8), rgba(70,20,40,0.85));
             backdrop-filter: blur(12px);
@@ -256,7 +262,7 @@
             color: #ffcedb;
         }
 
-        /* apply section - pink VS */
+        /* apply section */
         .apply-section {
             padding: 4rem 2.5rem;
             display: flex;
@@ -302,7 +308,6 @@
             box-shadow: 0 5px 20px rgba(255, 46, 100, 0.7);
         }
 
-        /* social pink */
         .social-follow {
             padding: 1.5rem 2.5rem;
             display: flex;
@@ -328,7 +333,6 @@
             color: #ff88aa;
         }
 
-        /* modal dark pink */
         .modal {
             display: none;
             position: fixed;
@@ -379,13 +383,10 @@
     </style>
 </head>
 <body>
-<!-- VICTORIA'S SECRET ICONIC VERTICAL STRIPED BACKGROUND (pink + darker pink/black) -->
 <div class="vs-striped-bg"></div>
 <div class="pink-glow"></div>
 
 <div class="wrapper">
-    <!-- NO TOP NAV BAR - removed completely as requested -->
-
     <!-- Hero section -->
     <div class="hero">
         <div class="hero-content">
@@ -397,31 +398,22 @@
         </div>
     </div>
 
-    <!-- Categories strip -->
-    <div class="categories-strip">
-        <span class="cat-item"><i class="fas fa-heart"></i> BEAUTY</span>
-        <span class="cat-item"><i class="fas fa-crown"></i> BRAND VALUES</span>
-        <span class="cat-item"><i class="fas fa-calendar-check"></i> EVENTS</span>
-        <span class="cat-item"><i class="fas fa-tshirt"></i> FASHION SHOW</span>
-        <span class="cat-item"><i class="fas fa-gem"></i> GIFTS</span>
-        <span class="cat-item"><i class="fas fa-bed"></i> LIVING</span>
-        <span class="cat-item"><i class="fas fa-chart-line"></i> PROFILES</span>
-        <span class="cat-item"><i class="fas fa-mask"></i> STYLE</span>
-        <span class="cat-item"><i class="fas fa-globe-americas"></i> THE TOUR '23</span>
-        <span class="cat-item"><i class="fas fa-plane-departure"></i> TRAVEL</span>
-        <span class="cat-item"><i class="fas fa-microphone-alt"></i> VS VOICES</span>
+    <!-- Categories strip - ALL CLICKABLE LINKS that open detail pages (created by me) -->
+    <div class="categories-strip" id="categoriesStrip">
+        <a href="#" class="cat-item" data-category="beauty"><i class="fas fa-heart"></i> BEAUTY</a>
+        <a href="#" class="cat-item" data-category="brand"><i class="fas fa-crown"></i> BRAND VALUES</a>
+        <a href="#" class="cat-item" data-category="events"><i class="fas fa-calendar-check"></i> EVENTS</a>
+        <a href="#" class="cat-item" data-category="fashion"><i class="fas fa-tshirt"></i> FASHION SHOW</a>
+        <a href="#" class="cat-item" data-category="gifts"><i class="fas fa-gem"></i> GIFTS</a>
+        <a href="#" class="cat-item" data-category="living"><i class="fas fa-bed"></i> LIVING</a>
+        <a href="#" class="cat-item" data-category="profiles"><i class="fas fa-chart-line"></i> PROFILES</a>
+        <a href="#" class="cat-item" data-category="style"><i class="fas fa-mask"></i> STYLE</a>
+        <a href="#" class="cat-item" data-category="tour"><i class="fas fa-globe-americas"></i> THE TOUR '23</a>
+        <a href="#" class="cat-item" data-category="travel"><i class="fas fa-plane-departure"></i> TRAVEL</a>
+        <a href="#" class="cat-item" data-category="voices"><i class="fas fa-microphone-alt"></i> VS VOICES</a>
     </div>
 
-    <!-- GALLERY - USING YOUR EXACT IMAGE FILES FROM /images FOLDER -->
-    <!-- MAPPING: 
-         Index 0: vs (2).jpg -> "Pink Angel"
-         Index 1: vs fashion show.jpg -> "Runway Fantasy"
-         Index 2: vs(3).jpg -> "VS Tour Mystique"
-         Index 3: vs(4).jpg -> "Casting Seduction"
-         Index 4: vss.jpg -> "Wings of Style" (NEW)
-         Index 5: vs.jpg -> "Iconic Angel"
-         Index 6: 33f9fa55115776c99faeede46c9014a0.jpg -> "Behind the Velvet" (NEW)
-    -->
+    <!-- GALLERY - CLICKABLE CARDS THAT OPEN DETAIL PAGES -->
     <div class="gallery-section" id="gallery">
         <div class="section-title"><i class="fas fa-camera-retro"></i> VICTORIA'S SECRET ANGELS</div>
         <div class="gallery-grid" id="dynamicGallery"></div>
@@ -488,30 +480,144 @@
 
 <script>
     // ============================================================
-    // YOUR EXACT IMAGE FILES FROM "images/" FOLDER
-    // UPDATED MAPPING with the two new images:
-    // - vss.jpg for "Wings of Style" (index 4)
-    // - 33f9fa55115776c99faeede46c9014a0.jpg for "Behind the Velvet" (index 6)
+    // IMAGE FILES FROM "images/" FOLDER
     // ============================================================
     const imageFiles = [
         "vs (2).jpg",
         "vs fashion show.jpg",
         "vs(3).jpg",
         "vs(4).jpg",
-        "vss.jpg",           // NEW: Wings of Style
+        "vss.jpg",
         "vs.jpg",
-        "33f9fa55115776c99faeede46c9014a0.jpg"   // NEW: Behind the Velvet
+        "33f9fa55115776c99faeede46c9014a0.jpg"
     ];
     
-    // Labels remain in swapped order (Pink Angel first, then Runway Fantasy)
     const sexyLabels = [
-        "Pink Angel",           // Index 0 - vs (2).jpg
-        "Runway Fantasy",       // Index 1 - vs fashion show.jpg
-        "VS Tour Mystique",     // Index 2 - vs(3).jpg
-        "Casting Seduction",    // Index 3 - vs(4).jpg
-        "Wings of Style",       // Index 4 - vss.jpg (UPDATED)
-        "Iconic Angel",         // Index 5 - vs.jpg
-        "Behind the Velvet"     // Index 6 - 33f9fa55115776c99faeede46c9014a0.jpg (UPDATED)
+        "Pink Angel",
+        "Runway Fantasy",
+        "VS Tour Mystique",
+        "Casting Seduction",
+        "Wings of Style",
+        "Iconic Angel",
+        "Behind the Velvet"
+    ];
+    
+    // Function to open a detail page (created by me) for gallery items
+    function openAngelDetailPage(angelName, imagePath, description) {
+        // Create a new window/document with fully designed VS page
+        const detailWindow = window.open('', '_blank');
+        detailWindow.document.write(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria's Secret | ${angelName}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(90deg, #ff1a5e 0%, #ff1a5e 25%, #8b0a32 25%, #8b0a32 50%, #ff1a5e 50%, #ff1a5e 75%, #8b0a32 75%, #8b0a32 100%);
+            background-size: 80px 100%;
+            color: #f5e9e1;
+        }
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+        }
+        .back-btn {
+            background: #ff2e64;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        .angel-hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        .angel-hero img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 32px;
+            border: 2px solid #ff6b92;
+            box-shadow: 0 20px 35px -10px black;
+            object-fit: cover;
+            height: 500px;
+        }
+        .angel-info h1 {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #ffb6d0, #ff7096);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .angel-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #ffded2;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            border-left: 4px solid #ff4d7a;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: #ffbfd2;
+        }
+        @media (max-width: 800px) {
+            .angel-hero { flex-direction: column; }
+            .angel-info h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <button class="back-btn" onclick="window.close()"><i class="fas fa-arrow-left"></i> BACK TO ANGELS</button>
+        <div class="angel-hero">
+            <img src="${imagePath}" alt="${angelName}" onerror="this.src='https://placehold.co/600x800/ff1a5e/white?text=VS+Angel'">
+            <div class="angel-info">
+                <h1><i class="fas fa-star-of-life"></i> ${angelName}</h1>
+                <p>${description}</p>
+                <div class="quote">
+                    <i class="fas fa-feather-alt"></i> "She walks the runway like no other — confidence, power, and undeniable grace."
+                </div>
+                <p>Every Victoria's Secret Angel embodies the spirit of fearlessness, beauty, and strength. Join the legacy.</p>
+                <button class="back-btn" onclick="window.close()" style="background: #ff4d7a;">CLOSE & RETURN</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+        `);
+        detailWindow.document.close();
+    }
+    
+    // Descriptions for each angel
+    const angelDescriptions = [
+        "The Pink Angel radiates playful confidence and youthful energy. She's the heartbeat of the VS runway, bringing joy and flirtatious charm to every step.",
+        "Runway Fantasy is the dream weaver of the fashion world. With ethereal presence and dramatic flair, she turns every catwalk into a magical spectacle.",
+        "VS Tour Mystique captures the essence of global glamour. From New York to Paris, she embodies the wanderlust and mystery of the Victoria's Secret tour.",
+        "Casting Seduction represents the raw, untamed power of discovery. She's the hidden gem, the fresh face that stops the world with a single glance.",
+        "Wings of Style is the embodiment of elegance and edge. Her wings are not just accessories — they are statements of artistic freedom and haute couture.",
+        "Iconic Angel is the timeless legend. She carries the weight of VS history while blazing trails for the next generation of angels.",
+        "Behind the Velvet is the secret weapon of the show. Mysterious, alluring, and unforgettable — she captivates from the shadows and steals every spotlight."
     ];
     
     const galleryDiv = document.getElementById('dynamicGallery');
@@ -523,28 +629,36 @@
         galleryDiv.innerHTML = '';
         for(let i = 0; i < imageFiles.length; i++) {
             const imgPath = `images/${imageFiles[i]}`;
-            const card = document.createElement('div');
+            const card = document.createElement('a');
             card.className = 'gallery-card';
+            card.href = '#';
+            card.style.cursor = 'pointer';
+            
+            // Add click handler to open detail page
+            card.addEventListener('click', (function(idx) {
+                return function(e) {
+                    e.preventDefault();
+                    openAngelDetailPage(sexyLabels[idx], imgPath, angelDescriptions[idx]);
+                };
+            })(i));
+            
             const imgWrap = document.createElement('div');
             const img = document.createElement('img');
             img.className = 'gallery-img';
             img.src = imgPath;
             img.alt = sexyLabels[i];
             
-            // Track if image loads successfully
             img.onload = function() {
                 loadedCount++;
                 if(loadedCount === imageFiles.length && missingCount === 0) {
                     helperDiv.innerHTML = `<div style="background: #1f0f15; padding: 8px 20px; border-radius: 60px; display: inline-block; font-size:0.75rem;">
-                                            <i class="fas fa-check-circle" style="color:#ff6b92;"></i> ✨ All ${imageFiles.length} VS angel images loaded from your /images folder! ✨
+                                            <i class="fas fa-check-circle" style="color:#ff6b92;"></i> ✨ All ${imageFiles.length} VS angel images loaded! Click any image for exclusive details. ✨
                                            </div>`;
                 }
             };
             
-            // Track if image fails to load
             img.onerror = function() {
                 missingCount++;
-                // Replace broken image with a stylized error placeholder that shows the required filename
                 const fallbackDiv = document.createElement('div');
                 fallbackDiv.style.height = '360px';
                 fallbackDiv.style.display = 'flex';
@@ -555,18 +669,14 @@
                 fallbackDiv.style.borderRadius = '16px';
                 fallbackDiv.innerHTML = `<i class="fas fa-image" style="font-size: 2.8rem; margin-bottom: 12px; color:#ff6b92;"></i>
                                          <span style="font-weight:bold; background:#1f0911; padding:5px 12px; border-radius:40px;">${imageFiles[i]}</span>
-                                         <span style="font-size:0.75rem; margin-top: 12px;">📁 Place this file in "images/" folder</span>
-                                         <span style="font-size:0.7rem; margin-top: 6px;">for "${sexyLabels[i]}"</span>`;
+                                         <span style="font-size:0.75rem; margin-top: 12px;">📁 Place this file in "images/" folder</span>`;
                 imgWrap.innerHTML = '';
                 imgWrap.appendChild(fallbackDiv);
                 
-                // Update helper message with all missing files
                 helperDiv.innerHTML = `<div class="fallback-message">
                     <i class="fas fa-folder-open"></i> <strong>⚠️ Some images are missing in your "images/" folder</strong><br>
-                    Make sure these files exist (spelling and spaces matter!): <br>
+                    Make sure these files exist: <br>
                     ${imageFiles.map(name => `<code>${name}</code>`).join(' ')}
-                    <br><br>
-                    <i class="fas fa-info-circle"></i> Your folder should contain these exact filenames.
                 </div>`;
             };
             
@@ -578,47 +688,99 @@
             card.appendChild(labelSpan);
             galleryDiv.appendChild(card);
         }
-        
-        // If no images loaded after timeout, show helper
-        setTimeout(() => {
-            if(loadedCount === 0 && missingCount > 0) {
-                helperDiv.innerHTML = `<div class="fallback-message">
-                    <i class="fas fa-folder-open"></i> <strong>📁 No images found in your "images/" folder</strong><br>
-                    Please create an "images" folder next to this HTML file and add these files:<br>
-                    ${imageFiles.map(name => `<code>${name}</code>`).join(' ')}
-                    <br><br>
-                    <i class="fas fa-heart" style="color:#ff6b92;"></i> Once added, refresh the page and your Victoria's Secret gallery will appear!
-                </div>`;
-            }
-        }, 800);
     }
     
-    // ---------- MODAL LOGIC ----------
-    const modal = document.getElementById('applicationModal');
-    const openBtns = ['heroApplyBtn', 'calloutApplyBtn', 'applyNowFooterBtn'];
-    openBtns.forEach(id => {
-        const btn = document.getElementById(id);
-        if(btn) btn.addEventListener('click', () => modal.style.display = 'flex');
-    });
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    if(closeModalBtn) closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
-    window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
-    
-    const form = document.getElementById('applyForm');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert("✨ Thank you, Angel. Your application radiates confidence like a true Victoria's Secret star. Our team will contact you if selected for the legendary casting. ✨");
-            modal.style.display = 'none';
-            form.reset();
-        });
-    }
-    
-    console.log("💖 VICTORIA'S SECRET STRIPED BACKGROUND: Hot pink + dark pink vertical stripes.");
-    console.log("Looking for these image files in the 'images' folder: ", imageFiles.join(", "));
-    console.log("Labels: ", sexyLabels);
-    console.log("✅ UPDATED: 'vss.jpg' is now 'Wings of Style' (index 4)");
-    console.log("✅ UPDATED: '33f9fa55115776c99faeede46c9014a0.jpg' is now 'Behind the Velvet' (index 6)");
-</script>
-</body>
-</html>
+    // ============================================================
+    // CATEGORY PAGE GENERATOR (for all 11 clickable categories)
+    // ============================================================
+    function openCategoryPage(categoryName, categoryDesc, iconColor) {
+        const catWindow = window.open('', '_blank');
+        catWindow.document.write(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria's Secret | ${categoryName}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(90deg, #ff1a5e 0%, #ff1a5e 25%, #8b0a32 25%, #8b0a32 50%, #ff1a5e 50%, #ff1a5e 75%, #8b0a32 75%, #8b0a32 100%);
+            background-size: 80px 100%;
+            color: #f5e9e1;
+        }
+        .category-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+        }
+        .back-btn {
+            background: #ff2e64;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #ffb6d0, #ff7096);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .desc {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: #ffded2;
+            max-width: 800px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 1px solid #ff6b92;
+        }
+        .feature-card i {
+            font-size: 2rem;
+            color: #ff8dae;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 800px) {
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="category-container">
+        <button class="back-btn" onclick="window.close()"><i class="fas fa-arrow-left"></i> BACK TO MAIN</button>
+        <h1><i class="${iconColor}"></i> ${categoryName}</h1>
+        <div class="desc">${categoryDesc}</div>
+        <div class="feature-grid">
+            <div class="feature-card"><i class="fas fa-star"></i><h3>Exclusive Access</h3><p>Behind-the-scenes content and VIP experiences.</p></div>
+            <div class="feature-card"><i class="fas fa-crown"></i><h3>Iconic Moments</h3><p>Legendary runway highlights and interviews.</p></div>
+            <div class="feature-card"><i class="fas fa-heart"></i><h3>Angel Community</h3><p>Join the ultimate VS family worldwide.</p></div>
+        </div>
+        <button class="back-btn" onclick="window.close()" style="margin-top: 2rem; background: #ff4d7
